@@ -113,3 +113,58 @@ sudo systemctl restart kibana
   ![kibana running](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/elastic-and-kibana/kibana-running-browser.png)
 
 ![kibana dashboard running](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/elastic-and-kibana/kibana-running-dashboard.png)
+
+# Installing metric beat on a differnt server:
+
+These are the steps followed to install metric beat on a different server:
+
+- Adding metricbeat signing keys:
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+```
+
+![add keys](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/metricbeat/add-metricbeat-signing-key.png)
+
+- Install the dependencies:
+
+```bash
+sudo apt-get install apt-transport-https
+
+```
+
+![add dependencies](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/metricbeat/install-dependecncies.png)
+
+- Add metricbeat repository:
+
+```bash
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+
+```
+
+- Apt updoate and install metricbeat:
+
+```bash
+sudo apt-get update && sudo apt-get install metricbeat
+
+```
+
+![install metricbeat](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/metricbeat/install-metric-beat.png)
+
+- Edit and update the metcibeat's conft file at `/etc/metricbeat/metricbeat.yml` and set the host ip anddress, ports and elastic search's username and password:
+
+![setting up username and password](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/metricbeat/set-elastic-username-passwrod.png)
+
+- Enabling and starting the metricbeat:
+
+```
+sudo systemctl enable metricbeat
+
+sudo systemctl start metricbeat
+
+sudo systemctl status metricbeat
+
+```
+
+![metricbeat running](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/blob/main/A-/screenshot/metricbeat/metric-beat-running.png)
