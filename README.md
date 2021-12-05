@@ -15,11 +15,11 @@ c. Load average
 
 1. Create a dashboard in kibana and generate visual report(line graph) for Memory usage and load average of server1 with relation to time]
 
-   [Answer](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/tree/main/1)
+   [Answer](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/tree/main/creatd-dsahboard)
 
 2. Generate alerts through kibana system for following thresholds
    a. when memory usage > 80% for last 2 minutes send alert to a slack channel
    b. When Disk usage > 70% send alert to a slack channel
    c. When load average > 1 for last 2 minutes send alert to a slack channel
 
-[Answer](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/tree/main/2)
+[Answer](https://github.com/LF-DevOps-Intern/6_1_elk_stack-surpriso1997/tree/main/alerts)
